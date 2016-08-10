@@ -146,12 +146,12 @@ public class TVButton: UIButton, UIGestureRecognizerDelegate {
     Adds the gesture recognizers to the button.
     */
     func addGestureRecognizers(){
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(TVButton.handlePan(_:)))
         panGestureRecognizer?.delegate = self
         self.addGestureRecognizer(panGestureRecognizer!)
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TVButton.handleTap(_:)))
         self.addGestureRecognizer(tapGestureRecognizer!)
-        longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(TVButton.handleLongPress(_:)))
         longPressGestureRecognizer?.delegate = self
         self.addGestureRecognizer(longPressGestureRecognizer!)
     }

@@ -88,7 +88,7 @@ internal class TVButtonAnimation {
                 tvButton.layer.transform = combinedTransform
                 tvButton.specularView.alpha = specularAlpha
                 tvButton.specularView.center = point
-                for var i = 1; i < tvButton.containerView.subviews.count ; i++ {
+                for i in 1 ..< tvButton.containerView.subviews.count  {
                     let adjusted = i/2
                     let scale = 1 + maxScaleDelta*CGFloat(adjusted/tvButton.containerView.subviews.count)
                     let subview = tvButton.containerView.subviews[i]
@@ -100,7 +100,7 @@ internal class TVButtonAnimation {
 
                 }, completion: nil)
             UIView.animateWithDuration(0.16, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                for var i = 1; i < tvButton.containerView.subviews.count ; i++ {
+                for i in 1 ..< tvButton.containerView.subviews.count  {
                     let subview = tvButton.containerView.subviews[i]
                     let xParallax = tvButton.parallaxIntensity*parallaxIntensityXFactor
                     let yParallax = tvButton.parallaxIntensity*parallaxIntensityYFactor
@@ -146,7 +146,7 @@ internal class TVButtonAnimation {
             UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                 tvButton.transform = CGAffineTransformIdentity
                 tvButton.specularView.alpha = 0.0
-                for var i = 0; i < tvButton.containerView.subviews.count ; i++ {
+                for i in 0..<tvButton.containerView.subviews.count {
                     let subview = tvButton.containerView.subviews[i]
                     subview.frame.size = CGSizeMake(tvButton.bounds.size.width, tvButton.bounds.size.height)
                     subview.center = CGPointMake(tvButton.bounds.size.width/2, tvButton.bounds.size.height/2)
